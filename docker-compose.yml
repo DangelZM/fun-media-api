@@ -1,0 +1,36 @@
+version: "2"
+services:
+  api:
+    build: .
+    command: "pm2-docker process.json"
+    ports:
+      - "3777:3000"
+    depends_on:
+       - mongodb
+    environment:
+      NODE_ENV: development
+      AUTH0_DOMAIN: "justcoders.eu.auth0.com"
+      AUTH0_AUDIENCE: "http://fun-media.justcoders.org/api"
+      MONGODB_HOST: mongodb
+      MONGODB_PORT: mongodb
+      MONGODB_DATABASE: "fun_media"
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+
+  mongodb:
+    ports:
+      - "27077:27017"
+    image: mongo:latest
+    volumes:
+      - "mongodb:/data/db"
+    command: --smallfiles --rest
+
+volumes:
+  mongodb:
+    external:
+      name: mongodb
+
+networks:
+  default:
+    driver: bridge

@@ -1,0 +1,8 @@
+FROM social-api
+
+ENV NODE_ENV development
+
+RUN npm install && \
+    npm install -g mocha
+
+CMD ["mocha", "tests/test.js", "--reporter", "spec"]
