@@ -1,4 +1,4 @@
-FROM social-api
+FROM fun-media-api
 
 ENV NODE_ENV development
 

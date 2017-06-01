@@ -9,11 +9,10 @@ services:
        - mongodb
     environment:
       NODE_ENV: development
-      AUTH0_DOMAIN: "justcoders.eu.auth0.com"
-      AUTH0_AUDIENCE: "http://fun-media.justcoders.org/api"
-      MONGODB_HOST: mongodb
-      MONGODB_PORT: mongodb
-      MONGODB_DATABASE: "fun_media"
+      AUTH0_DOMAIN: "fun-media.eu.auth0.com"
+      AUTH0_AUDIENCE: "http://localhost:3777/api"
+      DB_NAME: "fun_media"
+      DB_URL: mongodb
     volumes:
       - .:/usr/src/app
       - /usr/src/app/node_modules
