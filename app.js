@@ -13,6 +13,12 @@ conn.on('connected', function () {
   console.log('Mongoose connected to DB');
 
   require('./api/middlewares')(app);
+  
+  app.use('/', (req, res)=>{
+      res.json({
+        "message": "Hello!!!"
+      });
+  });
 
   app.use(require('./api/middlewares/checkJwt'));
   app.use('/api', require('./api'));
