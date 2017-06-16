@@ -21,7 +21,10 @@
     "helmet": "^3.6.1",
     "jwks-rsa": "^1.1.1",
     "mongoose": "^4.10.4",
-    "morgan": "^1.8.2"
+    "morgan": "^1.8.2",
+    "image-type": "^2.1.0",
+    "underscore": "^1.8.3",
+    "videoUrlParser": "git://github.com/DangelZM/jsVideoUrlParser.git"
   },
   "devDependencies": {
     "mocha": "3.2.0",
